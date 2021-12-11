@@ -1,9 +1,15 @@
-function check (cislo: number) {
+function change(cislo: number) {
     valueNumber += cislo
     whaleysans.showNumber(valueNumber)
 }
 input.onButtonPressed(Button.A, function () {
-    check(-1)
+    change(-1)
+})
+input.onButtonPressed(Button.B, function () {
+    change(1)
+})
+input.onLogoEvent(TouchButtonEvent.Pressed, function () {
+    basic.showNumber(checkCounter)
 })
 input.onButtonPressed(Button.AB, function () {
     if (!(success)) {
@@ -30,12 +36,7 @@ input.onButtonPressed(Button.AB, function () {
         basic.showIcon(IconNames.Happy)
     }
 })
-input.onButtonPressed(Button.B, function () {
-    check(1)
-})
-input.onLogoEvent(TouchButtonEvent.Pressed, function () {
-    basic.showNumber(checkCounter)
-})
+
 let secretNumber = 0
 let valueNumber = 0
 let checkCounter = 0
